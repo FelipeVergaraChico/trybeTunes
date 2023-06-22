@@ -14,7 +14,7 @@ function Album() {
       const musicas = d.slice(1, d.length - 1) as SongType[];
       setMusics(musicas);
     });
-  }, []);
+  }, [id]);
   return (
     <div>
       {
