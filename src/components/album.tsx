@@ -11,7 +11,7 @@ function Album() {
   useEffect(() => {
     getMusics(id ?? '').then((d) => {
       setAlbumSelecionado(d[0]);
-      const musicas = d.slice(1, d.length - 1) as SongType[];
+      const musicas = d.slice(1, d.length) as SongType[];
       setMusics(musicas);
     });
   }, [id]);
@@ -20,7 +20,7 @@ function Album() {
       {
 
         (musics && albumSelecionado)
-          ? (
+          && (
             <>
               <div>
                 <div>
@@ -44,9 +44,12 @@ function Album() {
             </>
 
           )
-          : (
-            <h2>Carregando...</h2>
-          )
+      }
+      {
+        (!albumSelecionado)
+        && (
+          <h2>Carregando...</h2>
+        )
       }
     </div>
   );
