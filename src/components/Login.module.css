@@ -1,0 +1,50 @@
+/* Login.css */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #007bff, #0056b3);
+    min-height: 100vh; /* Garante que o gradiente ocupa a altura inteira da viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-container {
+    text-align: center;
+    width: 100%;
+    max-width: 400px; /* Limita a largura do conteúdo para melhor leitura */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff; /* Cor de fundo para destacar o formulário */
+  }
+  
+  .login-logo {
+    margin-bottom: 20px;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .login-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .login-button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  

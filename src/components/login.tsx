@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
 import Loading from './Loading';
+import styles from './Login.module.css';
 
 function Login() {
   const [name, setName] = useState('');
@@ -22,31 +23,30 @@ function Login() {
   };
 
   return (
-
-    <div>
-      {
-        (!clicked)
-          ? (
-            <div>
-              <img src="./images/logo.png" alt="logo" />
-              <input
-                type="text"
-                placeholder="Qual seu nome?"
-                value={ name }
-                onChange={ handleNome }
-                data-testid="login-name-input"
-              />
-              <button
-                data-testid="login-submit-button"
-                disabled={ nomeValido }
-                onClick={ handleClick }
-              >
-                Entrar
-              </button>
-            </div>
-          )
-          : (<Loading />)
-      }
+    <div className={ styles['login-container'] }>
+      {!clicked ? (
+        <div className={ styles['login-form'] }>
+          <img src="/images/logo.png" alt="logo" className={ styles['login-logo'] } />
+          <input
+            type="text"
+            placeholder="Qual seu nome?"
+            value={ name }
+            onChange={ handleNome }
+            className={ styles['login-input'] }
+            data-testid="login-name-input"
+          />
+          <button
+            data-testid="login-submit-button"
+            disabled={ nomeValido }
+            onClick={ handleClick }
+            className={ styles['login-button'] }
+          >
+            Entrar
+          </button>
+        </div>
+      ) : (
+        <Loading />
+      )}
     </div>
   );
 }
